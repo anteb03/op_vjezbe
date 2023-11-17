@@ -12,7 +12,7 @@ public:
     string label;
 
     vector<string> suits = { "S", "B", "D", "C" };
-    vector<string> labels = { "A", "2", "3", "4", "5", "6", "7", "J", "Q", "K" };
+    vector<string> labels = { "1", "2", "3", "4", "5", "6", "7", "11", "12", "13" };
 
     Card(const string& s, const string& l) : suit(s), label(l) {}
 
@@ -21,6 +21,7 @@ public:
     }
 
     void shuffleLabelsAndSuits() {
+        srand(static_cast<unsigned int>(time(0)));
         random_shuffle(suits.begin(), suits.end());
         random_shuffle(labels.begin(), labels.end());
     }
@@ -85,7 +86,7 @@ public:
         int count2 = 0;
         int count3 = 0;
         for (const auto& card : hand) {
-            if (card.label == "A") {
+            if (card.label == "1") {
                 countA++;
             }
             else if (card.label == "2") {
@@ -122,7 +123,7 @@ public:
         int count2 = 0;
         int count3 = 0;
         for (const auto& card : hand) {
-            if (card.label == "A") {
+            if (card.label == "1") {
                 countA++;
             }
             else if (card.label == "2") {
@@ -145,7 +146,7 @@ public:
 
             for (const auto& card : hand) {
                 if (card.suit == suit) {
-                    if (card.label == "A") {
+                    if (card.label == "1") {
                         hasA = true;
                     }
                     else if (card.label == "2") {
