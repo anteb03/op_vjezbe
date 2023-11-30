@@ -33,9 +33,9 @@ int main() {
             VirtualPet newPet(petName, petType);
             owners[i].addPet(newPet);
         }
-        Owner copiedOwner = owners[0]; 
-        owners.push_back(copiedOwner);
     }
+    Owner copiedOwner = owners[0]; 
+    owners.push_back(copiedOwner);
     for (int i = 0; i < owners.size(); ++i) {
         owners[i].performActions();
     }
